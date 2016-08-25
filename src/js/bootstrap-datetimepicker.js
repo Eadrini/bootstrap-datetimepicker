@@ -395,7 +395,7 @@
 
                 // Top and bottom logic
                 if (vertical === 'auto') {
-                    if (offset.top + widget.height() * 1.5 >= $(window).height() + $(window).scrollTop() &&
+                    if (offset.top + widget.height() * 1.5 >= $(".embed-responsive-item").height() + $(".embed-responsive-item").scrollTop() &&
                         widget.height() + element.outerHeight() < offset.top) {
                         vertical = 'top';
                     } else {
@@ -406,7 +406,7 @@
                 // Left and right logic
                 if (horizontal === 'auto') {
                     if (parent.width() < offset.left + widget.outerWidth() / 2 &&
-                        offset.left + widget.outerWidth() > $(window).width()) {
+                        offset.left + widget.outerWidth() > $(".embed-responsive-item").width()) {
                         horizontal = 'right';
                     } else {
                         horizontal = 'left';
@@ -875,7 +875,7 @@
                 }
                 widget.hide();
 
-                $(window).off('resize', place);
+                $(".embed-responsive-item").off('resize', place);
                 widget.off('click', '[data-action]');
                 widget.off('mousedown', false);
 
@@ -1170,7 +1170,7 @@
                 update();
                 showMode();
 
-                $(window).on('resize', place);
+                $(".embed-responsive-item").on('resize', place);
                 widget.on('click', '[data-action]', doAction); // this handles clicks on the widget
                 widget.on('mousedown', false);
 
